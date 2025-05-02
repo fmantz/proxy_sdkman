@@ -1,0 +1,6 @@
+.idea
+./data/
+./logs/
+./proxy_sdkman/squid-self-signed.pem
+./ssl_cert.tar
+./ssl_cert/

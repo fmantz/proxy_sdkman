@@ -1,0 +1,4 @@
+use_proxy=yes
+http_proxy=127.0.0.1:3128
+https_proxy=127.0.0.1:3128
+ca_certificate=~/.proxy_sdkman/squid-self-signed.pem

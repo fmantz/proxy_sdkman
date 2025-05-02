@@ -1,0 +1,18 @@
+networks:
+  proxy:
+
+services:
+  squid:
+    image: sdkman_proxy
+    container_name: sdkman_proxy
+    networks:
+      - proxy
+    environment:
+      - TZ=UTC    
+    ports:
+      - "3128:3128"
+    volumes:
+      - ./build/squid.conf:/usr/local/squid/etc/squid.conf
+      - ./logs:/usr/local/squid/var/logs
+      - ./data:/usr/local/squid/var/cache
+    restart: unless-stopped
