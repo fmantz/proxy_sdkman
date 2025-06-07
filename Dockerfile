@@ -10,9 +10,12 @@ RUN apt-get install -y \
     wget
 
 # Install Squid manually with SSL_BUMB option.
-RUN wget https://github.com/squid-cache/squid/releases/download/SQUID_5_9/squid-5.9.tar.gz
-RUN tar -xvf squid-5.9.tar.gz
-RUN cd squid-5.9 && ./configure --with-default-user=proxy --with-openssl --enable-ssl-crtd && make && make install
+#RUN wget https://github.com/squid-cache/squid/releases/download/SQUID_5_9/squid-5.9.tar.gz
+RUN wget https://github.com/squid-cache/squid/releases/download/SQUID_6_13/squid-6.13.tar.gz
+#RUN tar -xvf squid-5.9.tar.gz
+RUN tar -xvf squid-6.13.tar.gz
+#RUN cd squid-5.9 && ./configure --with-default-user=proxy --with-openssl --enable-ssl-crtd && make && make install
+RUN cd squid-6.13 && ./configure --with-default-user=proxy --with-openssl --enable-ssl-crtd && make && make install
 
 # Configure SSL and create certificates.
 COPY ./build/openssl.cnf /etc/ssl/openssl.cnf

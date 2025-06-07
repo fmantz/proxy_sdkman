@@ -42,17 +42,17 @@ nano ~/.proxy_sdkman/.curlrc
 ```
 # test via curl:
 
-wget https://github.com/squid-cache/squid/releases/download/SQUID_5_9/squid-5.9.tar.gz
-wget https://github.com/squid-cache/squid/releases/download/SQUID_5_9/squid-5.9.tar.gz
+wget https://github.com/squid-cache/squid/releases/download/SQUID_6_13/squid-6.13.tar.gz
+wget https://github.com/squid-cache/squid/releases/download/SQUID_6_13/squid-6.13.tar.gz
 
 sudo cat ./logs/access.log
 
 1746186876.998     94 172.21.0.1 NONE_NONE/200 0 CONNECT github.com:443 - HIER_DIRECT/140.82.121.4 -
-1746186877.206    206 172.21.0.1 TCP_MISS/302 4545 GET https://github.com/squid-cache/squid/releases/download/SQUID_5_9/squid-5.9.tar.gz - HIER_DIRECT/140.82.121.4 text/html
+1746186877.206    206 172.21.0.1 TCP_MISS/302 4545 GET https://github.com/squid-cache/squid/releases/download/SQUID_6_13/squid-6.13.tar.gz - HIER_DIRECT/140.82.121.4 text/html
 1746186877.286     78 172.21.0.1 NONE_NONE/200 0 CONNECT objects.githubusercontent.com:443 - HIER_DIRECT/185.199.111.133 -
 1746186878.523   1234 172.21.0.1 TCP_MISS/200 5472531 GET https://objects.githubusercontent.com/github-production-release-asset-2e65be/24519987/0ee8b130-15e1-4802-b17a-77e90d4d48e8? - HIER_DIRECT/185.199.111.133 application/octet-stream
 1746186881.581     78 172.21.0.1 NONE_NONE/200 0 CONNECT github.com:443 - HIER_DIRECT/140.82.121.4 -
-1746186881.593     10 172.21.0.1 TCP_MISS/302 4544 GET https://github.com/squid-cache/squid/releases/download/SQUID_5_9/squid-5.9.tar.gz - HIER_DIRECT/140.82.121.4 text/html
+1746186881.593     10 172.21.0.1 TCP_MISS/302 4544 GET https://github.com/squid-cache/squid/releases/download/SQUID_6_13/squid-6.13.tar.gz - HIER_DIRECT/140.82.121.4 text/html
 1746186881.667     72 172.21.0.1 NONE_NONE/200 0 CONNECT objects.githubusercontent.com:443 - HIER_DIRECT/185.199.111.133 -
 1746186881.790    120 172.21.0.1 TCP_OFFLINE_HIT/200 5472574 GET https://objects.githubusercontent.com/github-production-release-asset-2e65be/24519987/0ee8b130-15e1-4802-b17a-77e90d4d48e8? - HIER_NONE/- applicatio
 ```
@@ -87,7 +87,7 @@ even still in the cache directory become invalid and need to be reload from the 
 # Cleanup
 
 ```
-./cleanup.sh
+sudo ./cleanup.sh
 ```
 
 Note, this step needs to be run as root, it also removes the generated certificates, in the working directory and also the container. However, the image is not removed.
